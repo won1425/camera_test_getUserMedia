@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="Display Webcam Stream" name="title">
+  <title>Display Webcam Stream</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div id="container">
+    <div class="select">
+        <label for="videoSource" id="label_camera">Camera: </label>
+		<select id="videoSource" autofocus size=4>
+		</select>
+	</div>
+	
+	  <!--
+      <div>
+	    <label for="size" id="label_size">Size: </label>
+        <button id="btn_size_1920" value = "1920"> 1920x1080</button>
+        <button id="btn_size_1280" value = "1280">1280x720</button>
+        <button id="btn_size_1024" value = "1024">1024X768</button>
+        <button id="btn_size_640" value = "640">640x480</button>
+	  </div>
+	  -->
+	
+    <div class="select">
+		<label for="size" id="label_size">Size: </label>
+		<select id="size" autofocus size=4>
+			<option value="1920">1920 x 1080</option>
+			<option value="1280">1280 x 720</option>
+			<option value="1024">1024 x 768</option>
+			<option value="640" selected>640 x 480</option>
+		</select>
+    </div>
+		
+
+	<!-- <video autoplay controls id="videoElement" onclick="onVideoClick()" ></video> -->
+	<video autoplay controls id="videoElement"></video>
+	<canvas id = "my_Canvas" ></canvas>
+    <p class="caption" id="resolution"> start</p>
+
+	<label class="switch">
+	  <input type="checkbox" checked id="btn">
+	  <span class="slider round"></span>
+	</label>
+	<p id="on_off"> Camera ON</p>
+
+	<div id="div_draw_rec" hidden>
+	<label class="switch">
+	  <input type="checkbox" checked id="btn_draw_rec">
+	  <span class="slider round"></span>
+	</label>
+	<p id="on_off_draw_rec"> REC ON</p>
+	</div>
+
+	<div id="div_ptz" hidden>
+	<label class="switch">
+	  <input type="checkbox" id="btn_ptz">
+	  <span class="slider round"></span>
+	</label>
+	<p id="on_off_ptz"> PTZ ON</p>
+	</div>
+   <!--
+    <div>
+		<label for="mine" id="brightness_label">brightness: </label>
+        <input id="mine" name="brightness" type="range" onChange="change(this.value);" disabled>
+		<span id="brightness"></span>
+
+		<label for="wb" id="wb_label">whiteBalance: </label>
+        <input id="wb" name="colorTemperature" type="range" onChange="change(this.value);" disabled>
+		<span id="colorTemperature"></span>
+    </div>
+
+    <div>
+		<label for="mine_awb" id="awb_label">autoWhiteBalance: </label>
+		<select id="mine_awb" disabled>
+			<option value="true">true</option>
+			<option value="false">false</option>
+		</select>
+    </div>
+	-->
+
+    <div> </br></div>
+    <div>
+        <div class="label">Pan:</div>
+        <input id="input_pan", name="pan" type="range" disabled>
+        <span id="pan"></span>
+    </div>
+    <div>
+        <div class="label">Tilt:</div>
+        <input id="input_tilt", name="tilt" type="range" disabled>
+        <span id="tilt"></span>
+    </div>
+    <div>
+        <div class="label">Zoom:</div>
+        <input id="input_zoom", name="zoom" type="range" disabled>
+        <span id="zoom"></span>
+    </div>
+	
+	<!--
+	<div class="network">
+		<label for="net" id="net_btn">net_test: </label>
+		<button id="btn_net">net</button>
+		<button id="btn_dns">dns</button>
+	</div>
+	-->
+	<div class="CLOSE APP">
+		<label for="close" id="close_btn">close app: </label>
+		<button id="btn_close">close</button>
+	</div>
+	
+    <div>
+      <span id="errorMsg"></span>
+    </div>
+
+  </div>
+
+  <script src="opengl.js"></script>
+  <script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.min.js"></script>
+
+</body>
+</html>
